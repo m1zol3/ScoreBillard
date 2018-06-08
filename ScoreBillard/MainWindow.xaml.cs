@@ -17,6 +17,7 @@ namespace ScoreBillard
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
+    /// Entry
     /// </summary>
     public partial class MainWindow : Window
     {
