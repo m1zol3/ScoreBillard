@@ -17,7 +17,7 @@ namespace ScoreBillard
 {
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
-    /// Entry TFS new
+    /// Entry TFS new point
     /// </summary>
     public partial class MainWindow : Window
     {
