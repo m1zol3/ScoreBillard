@@ -29,7 +29,7 @@ namespace ScoreBillard
             InitializeComponent();
             string connectionQuery = "SERVER=192.168.2.121;DATABASE=oberhausen;SslMode=none;UID=Micha;PASSWORD=rRcysO6IAdpn7QMl;";
             //string connectionQuery = "SERVER=localhost;DATABASE=oberhausen;SslMode=none;UID=root;PASSWORD=;";
-
+             
             MySqlConnection connection = new MySqlConnection(connectionQuery);
 
             MySqlCommand cmd = new MySqlCommand("SELECT * FROM spieler", connection);
