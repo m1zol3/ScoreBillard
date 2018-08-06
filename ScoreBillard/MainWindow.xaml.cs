@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+ 
 
 namespace ScoreBillard
 {
@@ -24,6 +27,18 @@ namespace ScoreBillard
         public MainWindow()
         {
             InitializeComponent();
+            string connectionQuery = "SERVER=192.168.2.121;DATABASE=oberhausen;SslMode=none;UID=Micha;PASSWORD=rRcysO6IAdpn7QMl;";
+            //string connectionQuery = "SERVER=localhost;DATABASE=oberhausen;SslMode=none;UID=root;PASSWORD=;";
+
+            MySqlConnection connection = new MySqlConnection(connectionQuery);
+
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM spieler", connection);
+            connection.Open();
+            DataTable dt = new DataTable();
+            dt.Load(cmd.ExecuteReader());
+            connection.Close();
+            myGrid.DataContext = dt;
+
         }
     }
 }
